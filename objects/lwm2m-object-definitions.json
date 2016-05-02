@@ -48,7 +48,7 @@
         "type": "opaque",
         "range": "",
         "units": "",
-        "description": "Stores the LWM2M Client's Certificate (Certificate mode), public key (RPK mode) or PSK Identity (PSK mode). The format is defined in Section E.1.1."
+        "description": "Stores the LWM2M Client’s Certificate (Certificate mode), public key (RPK mode) or PSK Identity (PSK mode). The format is defined in Section E.1.1."
       },
       "4": {
         "id": 4,
@@ -59,7 +59,7 @@
         "type": "opaque",
         "range": "",
         "units": "",
-        "description": "Stores the LWM2M Server's or LWM2M Bootstrap Server's Certificate (Certificate mode), public key (RPK mode) or PSK Identity (PSK mode). The format is defined in Section E.1.1."
+        "description": "Stores the LWM2M Server’s or LWM2M Bootstrap Server’s Certificate (Certificate mode), public key (RPK mode) or PSK Identity (PSK mode). The format is defined in Section E.1.1."
       },
       "5": {
         "id": 5,
@@ -178,7 +178,7 @@
         "type": "integer",
         "range": "",
         "units": "s",
-        "description": "The default value the LWM2M Client should use for the Minimum Period of an Observation in the absence of this parameter being included in an Observation.\nIf this Resource doesn't exist, the default value is 1."
+        "description": "The default value the LWM2M Client should use for the Minimum Period of an Observation in the absence of this parameter being included in an Observation.\nIf this Resource doesn’t exist, the default value is 1."
       },
       "3": {
         "id": 3,
@@ -197,10 +197,10 @@
         "operations": "E",
         "instancetype": "single",
         "mandatory": false,
-        "type": "",
+        "type": "string",
         "range": "",
         "units": "",
-        "description": "If this Resource is executed, this LWM2M Server Object is disabled for a certain period defined in the Disabled Timeout Resource. After receiving 'Execute' operation, LWM2M Client MUST send response of the operation and perform de-registration process, and underlying network connection between the Client and Server MUST be disconnected to disable the LWM2M Server account.\nAfter the above process, the LWM2M Client MUST NOT send any message to the Server and ignore all the messages from the LWM2M Server for the period."
+        "description": "If this Resource is executed, this LWM2M Server Object is disabled for a certain period defined in the Disabled Timeout Resource. After receiving “Execute” operation, LWM2M Client MUST send response of the operation and perform de-registration process, and underlying network connection between the Client and Server MUST be disconnected to disable the LWM2M Server account.\nAfter the above process, the LWM2M Client MUST NOT send any message to the Server and ignore all the messages from the LWM2M Server for the period."
       },
       "5": {
         "id": 5,
@@ -222,7 +222,7 @@
         "type": "boolean",
         "range": "",
         "units": "",
-        "description": "If true, the LWM2M Client stores 'Notify' operations to the LWM2M Server while the LWM2M Server account is disabled or the LWM2M Client is offline. After the LWM2M Server account is enabled or the LWM2M Client is online, the LWM2M Client reports the stored 'Notify' operations to the Server.\nIf false, the LWM2M Client discards all the 'Notify' operationsor temporally disables the Observe function while the LWM2M Server is disabled or the LWM2M Client is offline.\nThe default value is true.\nThe maximum number of storing Notification per the Server is up to the implementation."
+        "description": "If true, the LWM2M Client stores “Notify” operations to the LWM2M Server while the LWM2M Server account is disabled or the LWM2M Client is offline. After the LWM2M Server account is enabled or the LWM2M Client is online, the LWM2M Client reports the stored “Notify” operations to the Server.\nIf false, the LWM2M Client discards all the “Notify” operationsor temporally disables the Observe function while the LWM2M Server is disabled or the LWM2M Client is offline.\nThe default value is true.\nThe maximum number of storing Notification per the Server is up to the implementation."
       },
       "7": {
         "id": 7,
@@ -241,10 +241,10 @@
         "operations": "E",
         "instancetype": "single",
         "mandatory": true,
-        "type": "",
+        "type": "string",
         "range": "",
         "units": "",
-        "description": "If this Resource is executed the LWM2M Client MUST perform an 'Update' operation with this LWM2M Server using the Current Transport Binding and Mode."
+        "description": "If this Resource is executed the LWM2M Client MUST perform an “Update” operation with this LWM2M Server using the Current Transport Binding and Mode."
       }
     }
   },
@@ -297,7 +297,7 @@
         "type": "integer",
         "range": "0-65535",
         "units": "",
-        "description": "Short Server ID of a certain LWM2M Server. Only this LWM2M Server can manage these Resources of the Object Instance.\nValue MAX_ID=65535 is reserved for the Access Control Object Instances created during Bootstrap procedure."
+        "description": "Short Server ID of a certain LWM2M Server. Only this LWM2M Server can manage these Resources of the Object Instance.\nValue MAX_ID\u003d65535 is reserved for the Access Control Object Instances created during Bootstrap procedure."
       }
     }
   },
@@ -358,7 +358,7 @@
         "operations": "E",
         "instancetype": "single",
         "mandatory": true,
-        "type": "",
+        "type": "string",
         "range": "",
         "units": "",
         "description": "Reboot the LWM2M Device to restore the Device from unexpected firmware failure."
@@ -369,10 +369,10 @@
         "operations": "E",
         "instancetype": "single",
         "mandatory": false,
-        "type": "",
+        "type": "string",
         "range": "",
         "units": "",
-        "description": "Perform factory reset of the LWM2M Device to make the LWM2M Device have the same configuration as at the initial deployment.\nWhen this Resource is executed, 'De-register' operation  MAY be sent to the LWM2M Server(s) before factory reset of the LWM2M Device."
+        "description": "Perform factory reset of the LWM2M Device to make the LWM2M Device have the same configuration as at the initial deployment.\nWhen this Resource is executed, “De-register” operation  MAY be sent to the LWM2M Server(s) before factory reset of the LWM2M Device."
       },
       "6": {
         "id": 6,
@@ -383,7 +383,7 @@
         "type": "integer",
         "range": "0-7",
         "units": "",
-        "description": "0: DC power\n1: Internal Battery\n2: External Battery\n4: Power over Ethernet\n5: USB\n6: AC (Mains) power\n7: Solar"
+        "description": "0 – DC power\n1 – Internal Battery\n2 – External Battery\n4 – Power over Ethernet\n5 – USB\n6 – AC (Mains) power\n7 – Solar"
       },
       "7": {
         "id": 7,
@@ -438,7 +438,7 @@
         "type": "integer",
         "range": "",
         "units": "",
-        "description": "0: No error\n1: Low battery power\n2: External power supply off\n3: GPS module failure\n4: Low received signal strength\n5: Out of memory\n6: SMS failure\n7: IP connectivity failure\n8: Peripheral malfunction\n\nWhen the single Device Object Instance is initiated, there is only one error code Resource Instance whose value is equal to 0 that means no error. When the first error happens, the LWM2M Client changes error code Resource Instance to any non-zero value to indicate the error type. When any other error happens, a new error code Resource Instance is created.\nThis error code Resource MAY be observed by the LWM2M Server. How to deal with LWM2M Client's error report depends on the policy of the LWM2M Server."
+        "description": "0\u003dNo error\n1\u003dLow battery power\n2\u003dExternal power supply off\n3\u003dGPS module failure\n4\u003dLow received signal strength\n5\u003dOut of memory\n6\u003dSMS failure\n7\u003dIP connectivity failure\n8\u003dPeripheral malfunction\n\nWhen the single Device Object Instance is initiated, there is only one error code Resource Instance whose value is equal to 0 that means no error. When the first error happens, the LWM2M Client changes error code Resource Instance to any non-zero value to indicate the error type. When any other error happens, a new error code Resource Instance is created.\nThis error code Resource MAY be observed by the LWM2M Server. How to deal with LWM2M Client’s error report depends on the policy of the LWM2M Server."
       },
       "12": {
         "id": 12,
@@ -446,7 +446,7 @@
         "operations": "E",
         "instancetype": "single",
         "mandatory": false,
-        "type": "",
+        "type": "string",
         "range": "",
         "units": "",
         "description": "Delete all error code Resource Instances and create only one zero-value error code that implies no error."
@@ -535,7 +535,7 @@
         "type": "integer",
         "range": "",
         "units": "dBm",
-        "description": "This node contains the average value of the received signal strength indication used in the current network bearer in case Network Bearer Resource indicates a Cellular Network (RXLEV range 0..64) 0 is < 110dBm, 64 is > -48 dBm).\nRefer to [3GPP 44.018] for more details on Network Measurement Report encoding and [3GPP 45.008] or for Wireless Networks refer to the appropriate wireless standard."
+        "description": "This node contains the average value of the received signal strength indication used in the current network bearer in case Network Bearer Resource indicates a Cellular Network (RXLEV range 0…64) 0 is \u0026lt; 110dBm, 64 is \u003e-48 dBm).\nRefer to [3GPP 44.018] for more details on Network Measurement Report encoding and [3GPP 45.008] or for Wireless Networks refer to the appropriate wireless standard."
       },
       "3": {
         "id": 3,
@@ -546,7 +546,7 @@
         "type": "integer",
         "range": "",
         "units": "",
-        "description": "This contains received link quality  e.g., LQI for IEEE 802.15.4, (Range (0..255)), RxQual Downlink (for GSM range is 0..7).\nRefer to [3GPP 44.018] for more details on Network Measurement Report encoding."
+        "description": "This contains received link quality  e.g., LQI for IEEE 802.15.4, (Range (0..255)), RxQual Downlink (for GSM range is 0…7).\nRefer to [3GPP 44.018] for more details on Network Measurement Report encoding."
       },
       "4": {
         "id": 4,
@@ -568,7 +568,7 @@
         "type": "string",
         "range": "",
         "units": "",
-        "description": "The IP address of the next-hop IP router.\nNote: This IP Address doesn't indicate the Server IP address."
+        "description": "The IP address of the next-hop IP router.\nNote: This IP Address doesn’t indicate the Server IP address."
       },
       "6": {
         "id": 6,
@@ -601,7 +601,7 @@
         "type": "integer",
         "range": "",
         "units": "",
-        "description": "Serving Cell ID in case Network Bearer Resource is a Cellular Network.\nAs specified in TS [3GPP 23.003] and in [3GPP. 24.008]. Range (0..65535) in GSM/EDGE\nUTRAN Cell ID has a length of 28 bits.\nCell Identity  in WCDMA/TD-SCDMA. Range: (0..268435455).\nLTE Cell ID has a length of 28 bits.\nParameter definitions in [3GPP 25.331]."
+        "description": "Serving Cell ID in case Network Bearer Resource is a Cellular Network.\nAs specified in TS [3GPP 23.003] and in [3GPP. 24.008]. Range (0…65535) in GSM/EDGE\nUTRAN Cell ID has a length of 28 bits.\nCell Identity  in WCDMA/TD-SCDMA. Range: (0..268435455).\nLTE Cell ID has a length of 28 bits.\nParameter definitions in [3GPP 25.331]."
       },
       "9": {
         "id": 9,
@@ -612,7 +612,7 @@
         "type": "integer",
         "range": "",
         "units": "%",
-        "description": "Serving Mobile Network Code. In case Network Bearer Resource has 0(cellular network). Range (0..999).\nAs specified in TS [3GPP 23.003]."
+        "description": "Serving Mobile Network Code. In case Network Bearer Resource has 0(cellular network). Range (0…999).\nAs specified in TS [3GPP 23.003]."
       },
       "10": {
         "id": 10,
@@ -623,7 +623,7 @@
         "type": "integer",
         "range": "",
         "units": "",
-        "description": "Serving Mobile Country Code. In case Network Bearer Resource has 0 (cellular network). Range (0..999).\nAs specified in TS [3GPP 23.003]."
+        "description": "Serving Mobile Country Code. In case Network Bearer Resource has 0 (cellular network). Range (0…999).\nAs specified in TS [3GPP 23.003]."
       }
     }
   },
@@ -662,7 +662,7 @@
         "operations": "E",
         "instancetype": "single",
         "mandatory": true,
-        "type": "",
+        "type": "string",
         "range": "",
         "units": "",
         "description": "Updates firmware by using the firmware package stored in Package, or, by using the firmware downloaded from the Package URI.\nThis Resource is only executable when the value of the State Resource is Downloaded."
@@ -674,9 +674,9 @@
         "instancetype": "single",
         "mandatory": true,
         "type": "integer",
-        "range": "1-3",
+        "range": "0-3",
         "units": "",
-        "description": "Indicates current state with respect to this firmware update. This value is set by the LWM2M Client.\n1: Idle (before downloading or after updating)\n2: Downloading (The data sequence is on the way)\n3: Downloaded\nIf writing the firmware package to Package Resource is done, or, if the device has downloaded the firmware package from the Package URI the state changes to Downloaded.\nIf writing an empty string to Package Resource is done or writing an empty string to Package URI is done, the state changes to Idle.\nIf performing the Update Resource failed, the state remains at Downloaded.\nIf performing the Update Resource was successful, the state changes from Downloaded to Idle."
+        "description": "Indicates current state with respect to this firmware update. This value is set by the LWM2M Client.\n0: Idle (before downloading or after updating)\n1: Downloading (The data sequence is on the way)\n2: Downloaded\n3: Updating(go to this state when Resource Update is triggered)\nIf writing the firmware package to Package Resource is done, or, if the device has downloaded the firmware package from the Package URI the state changes to Downloaded.\nIf writing an empty string to Package Resource is done or writing an empty string to Package URI is done, the state changes to Idle.\nIf performing the Update Resource failed, the state remains at Downloaded.\nIf performing the Update Resource was successful, the state changes from Downloaded to Idle."
       },
       "4": {
         "id": 4,
@@ -699,6 +699,28 @@
         "range": "0-6",
         "units": "",
         "description": "Contains the result of downloading or updating the firmware\n0: Default value. Once the updating process is initiated, this Resource SHOULD be reset to default value.\n1: Firmware updated successfully,\n2: Not enough storage for the new firmware package.\n3. Out of memory during downloading process.\n4: Connection lost during downloading process.\n5: CRC check failure for new downloaded package.\n6: Unsupported package type.\n7: Invalid URI\nThis Resource MAY be reported by sending Observe operation."
+      },
+      "6": {
+        "id": 6,
+        "name": "PkgName",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "0-255 bytes",
+        "units": "",
+        "description": ""
+      },
+      "7": {
+        "id": 7,
+        "name": "PkgVersion",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "0-255 bytes",
+        "units": "",
+        "description": ""
       }
     }
   },
@@ -856,7 +878,7 @@
         "operations": "E",
         "instancetype": "single",
         "mandatory": true,
-        "type": "",
+        "type": "string",
         "range": "",
         "units": "",
         "description": "Start to collect information or reset all other Resources to zeros in this Object. For example, the first time this Resource is executed, the client starts to collect information. The second time this Resource is executed, the values of Resource 0~5 are reset to 0."
@@ -865,12 +887,12 @@
   },
   "8": {
     "id": 8,
-    "name": "Lock and Wipe",
+    "name": "Lock and wipe",
     "instancetype": "single",
     "mandatory": false,
-    "description": "This LWM2M objects provides the resources needed to perform the lock and wipe operations.",
+    "description": "",
     "resourcedefs": {
-			"0": {
+      "0": {
         "id": 0,
         "name": "State",
         "operations": "RW",
@@ -879,20 +901,20 @@
         "type": "integer",
         "range": "0-2",
         "units": "",
-        "description": "State of the device:\n0: unlocked state\nNormal operation.\n1: partially locked state\nTo render the device inoperable the device has been partially locked. The 'lock target' resource allows specifying the target(s) for this operation.\n2: fully locked state\nTo render the device fully inoperable the device has been fully locked."
-			},
-			"1": {
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "1": {
         "id": 1,
-        "name": "Lock target",
+        "name": "Lock Target",
         "operations": "W",
         "instancetype": "multiple",
         "mandatory": true,
         "type": "string",
         "range": "",
         "units": "",
-        "description": "To specify one or several targets for the lock operation. This allows partially locking the device by selecting specific components or interfaces to be locked."
-			},
-			"2": {
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "2": {
         "id": 2,
         "name": "Wipe item",
         "operations": "R",
@@ -901,9 +923,9 @@
         "type": "string",
         "range": "",
         "units": "",
-        "description": "Indicates which data can be wiped from the device. This resource could be e.g. representing a directory."
-			},
-			"3": {
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "3": {
         "id": 3,
         "name": "Wipe",
         "operations": "E",
@@ -912,9 +934,9 @@
         "type": "",
         "range": "",
         "units": "",
-        "description": "To permanently erase data from the device."
-			},
-			"4": {
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "4": {
         "id": 4,
         "name": "Wipe target",
         "operations": "W",
@@ -922,28 +944,26 @@
         "mandatory": true,
         "type": "string",
         "range": "",
-        "units": "",
-        "description": "To specify one or several targets for the wipe operation. This allows selecting specific data, or, memory areas for the wipe operation."
-			},
-			"5": {
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },	  
+      "5": {
         "id": 5,
-        "name": "Lock or Wipe Operation Result",
+        "name": "Lock and wipe operation result",
         "operations": "R",
-        "instancetype": "single",
+        "instancetype": "simple",
         "mandatory": true,
         "type": "integer",
         "range": "0-8",
-        "units": "",
-        "description": "Contains the result of a lock and wipe operation\n0: Default\n1: Partially Lock operation successful\n2: Fully Lock operation successful\n3: Unlock operation successful\n4: Wipe operation successful\n5: Partially Lock operation failed\n6: Fully Lock operation failed\n7: Unlock operation failed\n8: Wipe operation failed\nThis Resource MAY be reported by sending Observe operation."
-			}
-		}
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      }
+	}
   },
   "9": {
     "id": 9,
-    "name": "Software Update",
+    "name": "Software management",
     "instancetype": "multiple",
     "mandatory": false,
-    "description": "This LWM2M Objects provides the resources needed to perform software management on the device. Each software component is managed via a dedicated Software Management Object instance.",
+    "description": "",
     "resourcedefs": {
       "0": {
         "id": 0,
@@ -953,8 +973,7 @@
         "mandatory": true,
         "type": "string",
         "range": "0-255 bytes",
-        "units": "",
-        "description": "Name of the software package."
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "1": {
         "id": 1,
@@ -964,30 +983,27 @@
         "mandatory": true,
         "type": "string",
         "range": "0-255 bytes",
-        "units": "",
-        "description": "Version of the software package."
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "2": {
         "id": 2,
         "name": "Package",
         "operations": "W",
         "instancetype": "single",
-        "mandatory": true,
+        "mandatory": false,
         "type": "opaque",
         "range": "",
-        "units": "",
-        "description": "Software package."
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "3": {
         "id": 3,
         "name": "Package URI",
         "operations": "W",
         "instancetype": "single",
-        "mandatory": true,
+        "mandatory": false,
         "type": "string",
         "range": "0-255 bytes",
-        "units": "",
-        "description": "URI from where the device can download the software package by an alternative mechanism. As soon as the device has received the Package URI it performs the download at the next practical opportunity."
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "4": {
         "id": 4,
@@ -997,8 +1013,7 @@
         "mandatory": true,
         "type": "",
         "range": "",
-        "units": "",
-        "description": "Installs software from the package either stored in Package resource or downloaded from the Package URI. This Resource is only executable when the value of the State Resource is DELIVERED."
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "5": {
         "id": 5,
@@ -1006,10 +1021,9 @@
         "operations": "R",
         "instancetype": "single",
         "mandatory": false,
-        "type": "objlnk",
+        "type": "Objlnk",
         "range": "",
-        "units": "",
-        "description": "Link to a 'Checkpoint' object which allows to specify conditions/dependencies for a software update. E.g. power connected, sufficient memory, target system."
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "6": {
         "id": 6,
@@ -1017,43 +1031,39 @@
         "operations": "E",
         "instancetype": "single",
         "mandatory": true,
-        "type": "",
+        "type": "-",
         "range": "",
-        "units": "",
-        "description": "Uninstalls the software package, removes it from the Device if present and set Update State back to INITIAL state."
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "7": {
         "id": 7,
-        "name": "Update State",
+        "name": "Update state",
         "operations": "R",
         "instancetype": "single",
         "mandatory": true,
         "type": "integer",
-        "range": "1-5",
-        "units": "",
-        "description": "Indicates current state with respect to this software update. This value is set by the LWM2M Client.\n1: INITIAL Before downloading. (see 5.1.2.1)\n2: DOWNLOAD STARTED The downloading process has started and is on-going. (see 5.1.2.2)\n3: DOWNLOADED The package has been completely downloaded (see 5.1.2.3)\n4: DELIVERED In that state, the package has been correctly downloaded and is ready to be installed. (see 5.1.2.4)\nIf executing the Install Resource failed, the state remains at DELIBERED.\nIf executing the Install Resource was successful, the state changes from DELIVERED to INSTALLED.\nAfter executing the UnInstall Resource, the state changes to INITIAL.\n5: INSTALLED In that state the software is correctly installed and can be activated or deactivated according to the Activation State Machine. (see 5.1.2.5)"
+        "range": "0-4",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "8": {
         "id": 8,
-        "name": "Update Supported Objects",
+        "name": "Update supported objects",
         "operations": "RW",
         "instancetype": "single",
         "mandatory": false,
         "type": "boolean",
         "range": "",
-        "units": "",
-        "description": "If this value is true, the LWM2M Client MUST inform the registered LWM2M Servers of Objects and Object Instances parameter by sending an Update or Registration message after the software update operation at the next practical opportunity if supported Objects in the LWM2M Client have changed, in order for the LWM2M Servers to promptly manage newly installed Objects.\nIf false, Objects and Object Instances parameter MUST be reported at the next periodic Update message.\nThe default value is false."
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "9": {
         "id": 9,
-        "name": "Update Result",
+        "name": "Update result",
         "operations": "R",
         "instancetype": "single",
         "mandatory": true,
         "type": "integer",
-        "range": "0-10",
-        "units": "",
-        "description": "Contains the result of downloading or installing/uninstalling the software\n0: Initial value. Prior to download any new package in the Device, Update Result MUST be reset to this initial value. One side effect of executing the Uninstall resource is to reset Update Result to this initial value '0'.\n1: Downloading. The package downloading process is on-going.\n2: Software d successfully installed.\n3: Not enough storage for the new software package.\n4: Out of memory during downloading process.\n5: Connection lost during downloading process.\n6: Package integrity check failure.\n7: Unsupported package type.\n8: Invalid URI\n9: Device defined update error\n10: Software installation failure\nThis Resource MAY be reported by sending Observe operation."
+        "range": "0-200",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "10": {
         "id": 10,
@@ -1063,8 +1073,7 @@
         "mandatory": true,
         "type": "",
         "range": "",
-        "units": "",
-        "description": "This action activates the software previously successfully installed (the Package Installation State Machine is currently in the INSTALLED state)"
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "11": {
         "id": 11,
@@ -1074,8 +1083,7 @@
         "mandatory": true,
         "type": "",
         "range": "",
-        "units": "",
-        "description": "This action deactivates software if the Package Installation State Machine is currently in the INSTALLED state."
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "12": {
         "id": 12,
@@ -1083,10 +1091,9 @@
         "operations": "R",
         "instancetype": "single",
         "mandatory": true,
-        "type": "boolean",
+        "type": "Boolean",
         "range": "",
-        "units": "",
-        "description": "Indicates the current activation state of this software:\n0: DISABLED Activation State is DISABLED if the Software Activation State Machine is in the INACTIVE state or not alive.\n1: ENABLED Activation State is ENABLED only if the Software Activation State Machine is in the ACTIVE state"
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       },
       "13": {
         "id": 13,
@@ -1094,11 +1101,1200 @@
         "operations": "RW",
         "instancetype": "single",
         "mandatory": false,
+        "type": "Objlnk",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "14": {
+        "id": 14,
+        "name": "User name",
+        "operations": "W",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "0-255 bytes",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "15": {
+        "id": 15,
+        "name": "Password",
+        "operations": "W",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "0-255 bytes",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "16": {
+        "id": 16,
+        "name": "Status Reasons",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "17": {
+        "id": 17,
+        "name": "Software component link",
+        "operations": "R",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "Objlnk",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "18": {
+        "id": 18,
+        "name": "Software component tree length",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "Integer",
+        "range": "0-255",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      }
+	}
+  },
+  "10": {
+    "id": 10,
+    "name": "Cellular connectivity",
+    "instancetype": "single",
+    "mandatory": false,
+    "description": "This object specifies resources to enable a device to connect to a 3GGP or 3GPP2 bearer which contains GPRS/EDGE, UMTS, LTE, and SMS.",
+    "resourcedefs": {
+      "4000": {
+        "id": 4000,
+        "name": "Activatedprofile names",
+        "operations": "R",
+        "instancetype": "multiple",
+        "mandatory": true,
         "type": "objlnk",
         "range": "",
         "units": "",
-        "description": "Link to 'Package Settings' object which allows to modify at any time software configuration settings. This is an application specific object.\nNote: OMA might provide a template for a Package Settings object in a future release of this specification."
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "0": {
+        "id": 0,
+        "name": "SMSC address",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "1": {
+        "id": 1,
+        "name": "Disable radio period",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "0-86400",
+        "units": "s",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "2": {
+        "id": 2,
+        "name": "Module activation code",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "3": {
+        "id": 3,
+        "name": "Vendor specific extensions",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "objlnk",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
       }
     }
+  },
+  "11": {
+    "id": 11,
+    "name": "APN connection profile",
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "This object specifies resources to enable a device to connect to an APN.",
+    "resourcedefs": {
+      "0": {
+        "id": 0,
+        "name": "Profile name",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "1": {
+        "id": 1,
+        "name": "APN",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "2": {
+        "id": 2,
+        "name": "Auto select APN by device",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "3": {
+        "id": 3,
+        "name": "Enable status",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "4": {
+        "id": 4,
+        "name": "Authentification type",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "5": {
+        "id": 5,
+        "name": "User name",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "6": {
+        "id": 6,
+        "name": "Secret",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "7": {
+        "id": 7,
+        "name": "Reconnect schedule",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "8": {
+        "id": 8,
+        "name": "Validity (MCC,MNC)",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "9": {
+        "id": 9,
+        "name": "Connection establishement time",
+        "operations": "R",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "time",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "10": {
+        "id": 10,
+        "name": "Connection establishment result",
+        "operations": "R",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "11": {
+        "id": 11,
+        "name": "Connection establishment reject cause",
+        "operations": "R",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "integer",
+        "range": "0-111",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "12": {
+        "id": 12,
+        "name": "Connection end time",
+        "operations": "R",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "time",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "13": {
+        "id": 13,
+        "name": "TotalBytesSent",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "14": {
+        "id": 14,
+        "name": "TotalBytesReceived",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "15": {
+        "id": 15,
+        "name": "IP address",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "16": {
+        "id": 16,
+        "name": "Prefix length",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "17": {
+        "id": 17,
+        "name": "Subnet mask",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "18": {
+        "id": 18,
+        "name": "Gateway",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "19": {
+        "id": 19,
+        "name": "Primary DNS address",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "20": {
+        "id": 20,
+        "name": "Secondary DNS address",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "21": {
+        "id": 21,
+        "name": "QCI",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "1-9",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "22": {
+        "id": 22,
+        "name": "Vendor specific extensions",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "objlnk",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      }
+    }
+  },
+  "12": {
+    "id": 12,
+    "name": "WlLAN connectivity",
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "",
+    "resourcedefs": {
+      "0": {
+        "id": 0,
+        "name": "Interface name",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "1": {
+        "id": 1,
+        "name": "Enable",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "2": {
+        "id": 2,
+        "name": "Radio enabled",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "3": {
+        "id": 3,
+        "name": "Status",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "4": {
+        "id": 4,
+        "name": "BSSID",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "12 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "5": {
+        "id": 5,
+        "name": "SSID",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "1-32 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "6": {
+        "id": 6,
+        "name": "Broadcast SSID",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "Boolean",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "7": {
+        "id": 7,
+        "name": "Beacon enabled",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "8": {
+        "id": 8,
+        "name": "mode",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "9": {
+        "id": 9,
+        "name": "Channel",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "integer",
+        "range": "0-255",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "10": {
+        "id": 10,
+        "name": "Auto channel",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "11": {
+        "id": 11,
+        "name": "Supported channels",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "12": {
+        "id": 12,
+        "name": "Channels in use",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "13": {
+        "id": 13,
+        "name": "Regulatory domain",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "3 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "14": {
+        "id": 14,
+        "name": "Standard",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "15": {
+        "id": 15,
+        "name": "Authentification mode",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "16": {
+        "id": 16,
+        "name": "Encryption mode",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "17": {
+        "id": 17,
+        "name": "WPA pre shared key",
+        "operations": "W",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "64 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "18": {
+        "id": 18,
+        "name": "WPA key phrase",
+        "operations": "W",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "1-64 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "19": {
+        "id": 19,
+        "name": "WEP encryption type",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "20": {
+        "id": 20,
+        "name": "WEP key index",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "[1:4]",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "21": {
+        "id": 21,
+        "name": "WEP key phrase",
+        "operations": "W",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "1-64 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "22": {
+        "id": 22,
+        "name": "WEP key 1",
+        "operations": "W",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "10 or 26 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "23": {
+        "id": 23,
+        "name": "WEP key 2",
+        "operations": "W",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "10 or 26 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "24": {
+        "id": 24,
+        "name": "WEP key 3",
+        "operations": "W",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "10 or 26 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "25": {
+        "id": 25,
+        "name": "WEP key 4",
+        "operations": "W",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "10 or 26 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "26": {
+        "id": 26,
+        "name": "RADIUS server",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "1-256 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "27": {
+        "id": 27,
+        "name": "RADIUS server port",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "28": {
+        "id": 28,
+        "name": "RADIUS secret",
+        "operations": "W",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "1-256 bytes",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "29": {
+        "id": 29,
+        "name": "WMM supported",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "30": {
+        "id": 30,
+        "name": "WMN enabled",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "31": {
+        "id": 31,
+        "name": "MAC control enabled",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "32": {
+        "id": 32,
+        "name": "MAC addres list",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "string",
+        "range": "12 bytes",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "33": {
+        "id": 33,
+        "name": "Total bytes sent",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "34": {
+        "id": 34,
+        "name": "Total byte received",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "35": {
+        "id": 35,
+        "name": "Total packets sent",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "36": {
+        "id": 36,
+        "name": "Total packets received",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "37": {
+        "id": 37,
+        "name": "Transmit Errors",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "38": {
+        "id": 38,
+        "name": "Receive errors",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "39": {
+        "id": 39,
+        "name": "Unicast packets sent",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "40": {
+        "id": 40,
+        "name": "Unicast packets received",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "41": {
+        "id": 41,
+        "name": "Multicast packets sent",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "42": {
+        "id": 42,
+        "name": "Multicast packets received",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "43": {
+        "id": 43,
+        "name": "Broadcast packets sent",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "44": {
+        "id": 44,
+        "name": "Broadcast packet received",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "45": {
+        "id": 45,
+        "name": "Discard packets sent",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "46": {
+        "id": 46,
+        "name": "Unknown packets received",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "48": {
+        "id": 48,
+        "name": "Vendor specific extensions",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "objlnk",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      }
+	}
+  },
+  "13": {
+    "id": 13,
+    "name": "Bearer selection",
+    "instancetype": "single",
+    "mandatory": false,
+    "description": "",
+    "resourcedefs": {
+      "0": {
+        "id": 0,
+        "name": "Preferred communications bearer",
+        "operations": "RW",
+        "instancetype": "multiple",
+        "mandatory": false,
+        "type": "integer",
+        "range": "8-bit",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "1": {
+        "id": 1,
+        "name": "Acceptable RSSI (GSM)",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "2": {
+        "id": 2,
+        "name": "Acceptable RSCP (UMTS)",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "3": {
+        "id": 3,
+        "name": "Acceptable RSRP (LTE)",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "4": {
+        "id": 4,
+        "name": "Acceptable RSSI (1xEV-DO)",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "5": {
+        "id": 5,
+        "name": "Cell lock list",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "6": {
+        "id": 6,
+        "name": "Operator list",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "strinf",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "7": {
+        "id": 7,
+        "name": "Operator list mode",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "8": {
+        "id": 8,
+        "name": "List of available PLMNs",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "9": {
+        "id": 9,
+        "name": "Vendor specific extensions",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "objlnk",
+        "range": "",
+        "units": "",
+        "description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      }
+	}
+  },
+  "14": {
+    "id": 14,
+    "name": "Software component",
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "This object specifies resources to enable a device to connect to an APN.",
+    "resourcedefs": {
+      "0": {
+        "id": 0,
+        "name": "Component identity",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "0-255 bytes",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "1": {
+        "id": 1,
+        "name": "Component pack",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "opaque",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "2": {
+        "id": 2,
+        "name": "Component version",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "String",
+        "range": "0-255 bytes",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "3": {
+        "id": 3,
+        "name": "Activate",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "4": {
+        "id": 4,
+        "name": "Deactivate",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "5": {
+        "id": 5,
+        "name": "Activation state",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      }
+	}
+  },
+  "15": {
+    "id": 14,
+    "name": "DevCapMgmt",
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "",
+    "resourcedefs": {
+      "0": {
+        "id": 0,
+        "name": "Propertu",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "1": {
+        "id": 1,
+        "name": "Group",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "integer",
+        "range": "0-15",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "2": {
+        "id": 2,
+        "name": "Description",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "3": {
+        "id": 3,
+        "name": "Attached",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "4": {
+        "id": 4,
+        "name": "Enabled",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "5": {
+        "id": 5,
+        "name": "opEnable",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "6": {
+        "id": 6,
+        "name": "opDisable",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      },
+      "7": {
+        "id": 7,
+        "name": "NotifyEn",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "","description": "See LWM2M standard v1.0 and v1.0.1 for the moment"
+      }
+	}
   }
 }
